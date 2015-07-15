@@ -1,6 +1,8 @@
+import Item from '../../models/item';
+
 export default Ember.Controller.extend({
   init: function() {
-    var c = this;
+    var c = this, itemClass = Item;
     $.
       getJSON('http://api.reddit.com')
     .then(function(response) {
@@ -10,7 +12,7 @@ export default Ember.Controller.extend({
         return !!f.data.domain.match(/imgur.com$/);
       })
       .map(function(x) {
-        return x.data;
+        return itemClass.create(x.data);
       });
       c.set('model', elements);
     });
