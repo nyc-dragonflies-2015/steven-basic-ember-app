@@ -15,6 +15,7 @@ export default Ember.Controller.extend({
         return itemClass.create(x.data);
       });
       c.set('model', elements);
+      console.log(elements[0].get('domain'));
     });
   }
 })
