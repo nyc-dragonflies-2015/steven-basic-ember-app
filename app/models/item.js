@@ -1,9 +1,11 @@
 export default Ember.Object.extend({
-  previewImage: function() {
-    var size = this.preview.images[0].resolutions[2],
-      imgTag = "<img src='" + this.url + "' height='" + size.height + "' width='" + size.width + "'></image>";
-    return imgTag.htmlSafe();
-  }.property()
+  previewHeight: function() {
+    return this.preview.images[0].resolutions[2].height;
+  }.property(),
+
+  previewWidth: function() {
+    return this.preview.images[0].resolutions[2].width;
+  }.property(),
 })
 
 
