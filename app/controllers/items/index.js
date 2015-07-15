@@ -7,9 +7,10 @@ export default Ember.Controller.extend({
       var elements =  response
       .data
       .children.map(function(f){
-        return f.data
+        return f.data;
       });
       c.set('model', elements);
     });
   }
 })
+
