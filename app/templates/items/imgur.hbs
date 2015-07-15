@@ -1,5 +1,7 @@
+{{link-to 'The Full 25 Reddit Front Page Items' 'items'}}
+
 <ul>
 {{#each model as |item|}}
-  <li><a href="{{item.url}}">{{item.title}}</a></li>
+  <li><img src="{{item.preview.images.0.source.url}}"></li>
 {{/each}}
 </ul>
